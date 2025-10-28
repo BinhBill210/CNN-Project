@@ -108,15 +108,15 @@ def setup_directories():
     for d in dirs:
         d.mkdir(parents=True, exist_ok=True)
     
-    print("✅ Đã tạo tất cả thư mục cần thiết")
+    print("Đã tạo tất cả thư mục cần thiết")
     return dirs
 
 if __name__ == '__main__':
-    print("📁 Cấu hình đường dẫn project:\n")
+    print("Cấu hình đường dẫn project:\n")
     print(f"PROJECT_ROOT: {PROJECT_ROOT}")
     print(f"DATA_DIR: {DATA_DIR}")
     print(f"MODEL_DIR: {MODEL_DIR}")
     print(f"RESULTS_DIR: {RESULTS_DIR}")
     
-    print("\n🔧 Tạo thư mục...")
+    print("\nTạo thư mục...")
     setup_directories()

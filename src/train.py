@@ -104,16 +104,26 @@ def train_model():
     print("="*60 + "\n")
     
     # 5. Evaluate on test set
-    print("📊 Đánh giá trên test set...")
+    print("Đánh giá trên test set...")
     test_loss, test_acc = model.evaluate(test_ds, verbose=1)
     print(f"\nTest Accuracy: {test_acc*100:.2f}%")
     print(f"Test Loss: {test_loss:.4f}\n")
     
     # 6. Save final model
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    final_model_path = FINAL_MODEL_DIR / f'dog_breed_classifier_{timestamp}.keras'
-    model.save(final_model_path)
-    print(f"Model cuối cùng đã lưu tại: {final_model_path}\n")
+    try:
+        final_model_path = FINAL_MODEL_DIR / f'dog_breed_classifier_{timestamp}.keras'
+        model.save(final_model_path, save_format='keras')
+        print(f"Model đã lưu tại: {final_model_path}")
+        
+        # Verify model đã lưu
+        print("Đang verify model...")
+        test_load = tf.keras.models.load_model(final_model_path)
+        print("Model verify thành công!")
+        
+    except Exception as e:
+        print(f"Lỗi khi lưu model: {e}")
+        raise
     
     # 7. Save class names
     save_class_names()

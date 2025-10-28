@@ -34,7 +34,6 @@ pathlib2==2.3.7
 jupyter==1.0.0
 ipykernel==6.25.0
 notebook==7.0.2
-gradio==4.44.0
 
 # Optional: For TFLite conversion
 flatbuffers==23.5.26

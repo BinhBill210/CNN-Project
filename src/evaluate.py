@@ -36,7 +36,7 @@ def plot_confusion_matrix(y_true, y_pred, class_names, save_path=None):
     
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"✅ Confusion matrix đã lưu tại: {save_path}")
+        print(f"Confusion matrix đã lưu tại: {save_path}")
     
     plt.show()
 
@@ -45,31 +45,31 @@ def evaluate_model(model_path, batch_size=16):
     """Đánh giá model trên test set"""
     
     print("\n" + "="*60)
-    print("📊 ĐÁNH GIÁ MODEL")
+    print("ĐÁNH GIÁ MODEL")
     print("="*60 + "\n")
     
     # Load model
-    print(f"📥 Loading model từ: {model_path}")
+    print(f"Loading model từ: {model_path}")
     model = tf.keras.models.load_model(model_path)
-    print("✅ Model loaded!\n")
+    print("Model loaded!\n")
     
     # Load test dataset
-    print("📥 Loading test dataset...")
+    print("Loading test dataset...")
     test_ds = create_dataset_from_directory(
         get_test_dir(),
         is_training=False,
         batch_size=batch_size
     )
-    print("✅ Dataset loaded!\n")
+    print("Dataset loaded!\n")
     
     # Evaluate
-    print("⚙️  Đang đánh giá...")
+    print("Đang đánh giá...")
     test_loss, test_acc = model.evaluate(test_ds, verbose=1)
-    print(f"\n✅ Test Accuracy: {test_acc*100:.2f}%")
-    print(f"✅ Test Loss: {test_loss:.4f}\n")
+    print(f"\nTest Accuracy: {test_acc*100:.2f}%")
+    print(f"Test Loss: {test_loss:.4f}\n")
     
     # Predictions
-    print("⚙️  Đang dự đoán...")
+    print("Đang dự đoán...")
     y_true = []
     y_pred = []
     
@@ -98,10 +98,10 @@ def evaluate_model(model_path, batch_size=16):
     report_path.parent.mkdir(parents=True, exist_ok=True)
     with open(report_path, 'w') as f:
         f.write(report)
-    print(f"✅ Report đã lưu tại: {report_path}\n")
+    print(f"Report đã lưu tại: {report_path}\n")
     
     # Confusion matrix
-    print("⚙️  Tạo confusion matrix...")
+    print("Tạo confusion matrix...")
     cm_path = PLOTS_DIR / 'confusion_matrix.png'
     cm_path.parent.mkdir(parents=True, exist_ok=True)
     plot_confusion_matrix(y_true, y_pred, BREED_NAMES, cm_path)
@@ -129,10 +129,10 @@ def evaluate_model(model_path, batch_size=16):
     with open(metrics_path, 'w') as f:
         json.dump(metrics, f, indent=2)
     
-    print(f"\n✅ Metrics đã lưu tại: {metrics_path}")
+    print(f"\nMetrics đã lưu tại: {metrics_path}")
     
     print("\n" + "="*60)
-    print("✅ ĐÁNH GIÁ HOÀN TẤT!")
+    print("ĐÁNH GIÁ HOÀN TẤT!")
     print("="*60 + "\n")
     
     return metrics

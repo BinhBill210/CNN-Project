@@ -47,7 +47,7 @@ def save_class_names(save_path=None):
     with open(save_path, 'w', encoding='utf-8') as f:
         json.dump({'classes': BREED_NAMES}, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ Class names đã lưu tại: {save_path}")
+    print(f"Class names đã lưu tại: {save_path}")
 
 
 def load_class_names(load_path=None):
@@ -98,7 +98,7 @@ def save_model_info(model, save_dir, metadata=None):
     with open(info_path, 'w', encoding='utf-8') as f:
         json.dump(info, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ Model info đã lưu tại: {info_path}")
+    print(f"Model info đã lưu tại: {info_path}")
 
 
 def export_to_tflite(model, save_path, quantize=False):
@@ -115,8 +115,8 @@ def export_to_tflite(model, save_path, quantize=False):
         f.write(tflite_model)
     
     file_size = os.path.getsize(save_path) / (1024 * 1024)
-    print(f"✅ TFLite model đã lưu tại: {save_path}")
-    print(f"📦 Kích thước: {file_size:.2f} MB")
+    print(f"TFLite model đã lưu tại: {save_path}")
+    print(f"Kích thước: {file_size:.2f} MB")
 
 
 def save_training_history(history, save_path):
@@ -136,12 +136,12 @@ def save_training_history(history, save_path):
     with open(save_path, 'w', encoding='utf-8') as f:
         json.dump(history_dict, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ Training history đã lưu tại: {save_path}")
+    print(f"Training history đã lưu tại: {save_path}")
 
 
 if __name__ == '_main_':
     # Test utilities
-    print("🧪 Testing utilities...")
+    print("Testing utilities...")
     
     # Test convert function
     test_data = {
@@ -152,9 +152,9 @@ if __name__ == '_main_':
     }
     
     converted = convert_to_serializable(test_data)
-    print(f"\n✅ Converted data: {converted}")
+    print(f"\nConverted data: {converted}")
     
     # Test saving class names
     save_class_names()
     classes = load_class_names()
-    print(f"\n📋 Classes: {classes}")
+    print(f"\nClasses: {classes}")

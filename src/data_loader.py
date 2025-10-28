@@ -102,7 +102,7 @@ def load_datasets(batch_size=BATCH_SIZE):
     Returns:
         tuple: (train_ds, val_ds, test_ds)
     """
-    print("📥 Loading datasets...")
+    print("Loading datasets...")
     
     train_ds = create_dataset_from_directory(
         get_train_dir(),
@@ -122,7 +122,7 @@ def load_datasets(batch_size=BATCH_SIZE):
         batch_size=batch_size
     )
     
-    print("✅ Datasets loaded!\n")
+    print("Datasets loaded!\n")
     
     return train_ds, val_ds, test_ds
 
@@ -130,7 +130,7 @@ def load_datasets(batch_size=BATCH_SIZE):
 def get_dataset_info(dataset, name='Dataset'):
     """In thông tin về dataset"""
     for images, labels in dataset.take(1):
-        print(f"📊 {name}:")
+        print(f"{name}:")
         print(f"   Image batch shape: {images.shape}")
         print(f"   Label batch shape: {labels.shape}")
         print(f"   Image dtype: {images.dtype}")
@@ -139,7 +139,7 @@ def get_dataset_info(dataset, name='Dataset'):
 
 
 if __name__ == '__main__':
-    print(f"📁 Thư mục làm việc: {Path.cwd()}\n")
+    print(f"Thư mục làm việc: {Path.cwd()}\n")
     
     train_ds, val_ds, test_ds = load_datasets()
     
