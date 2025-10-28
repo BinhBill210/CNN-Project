@@ -1,0 +1,46 @@
+# ============================================================
+# DOG BREED CLASSIFICATION - Requirements
+# Python 3.9+
+# ============================================================
+
+# Core ML and Deep Learning
+tensorflow==2.15.0
+keras==2.15.0
+numpy==1.24.3
+scipy==1.11.1
+
+# Data Processing and Analysis
+pandas==2.0.3
+scikit-learn==1.3.0
+
+# Computer Vision and Image Processing
+opencv-python==4.8.1.78
+Pillow==10.0.0
+albumentations==1.3.1
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+
+# Data Loading and Augmentation
+tensorflow-datasets==4.9.2
+
+# Utilities
+tqdm==4.65.0
+pathlib2==2.3.7
+
+# Jupyter and Development
+jupyter==1.0.0
+ipykernel==6.25.0
+notebook==7.0.2
+gradio==4.44.0
+
+# Optional: For TFLite conversion
+flatbuffers==23.5.26
+
+# Optional: For model optimization
+tensorflow-model-optimization==0.7.4
+
+# Optional: For interactive plots
+ipywidgets==8.1.0

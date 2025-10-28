@@ -1,0 +1,14 @@
+{
+  "classes": [
+    "Beagle",
+    "Boxer",
+    "Bulldog",
+    "Dachshund",
+    "German_Shepherd",
+    "Golden_Retriever",
+    "Labrador_Retriever",
+    "Poodle",
+    "Rottweiler",
+    "Yorkshire_Terrier"
+  ]
+}

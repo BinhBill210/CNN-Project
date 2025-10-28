@@ -1,0 +1,14 @@
+{
+  "model_name": "dog_breed_efficientnet_b3",
+  "total_params": 10798905,
+  "trainable_params": 15370,
+  "input_shape": "(None, 300, 300, 3)",
+  "output_shape": "(None, 10)",
+  "timestamp": "2025-10-28T16:10:34.430758",
+  "test_accuracy": 1.0,
+  "test_loss": 0.12953175604343414,
+  "best_val_accuracy": 1.0,
+  "epochs_trained": 14,
+  "batch_size": 16,
+  "learning_rate": 0.001
+}
